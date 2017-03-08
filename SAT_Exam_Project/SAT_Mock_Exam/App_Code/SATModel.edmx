@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TestDataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Data">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Int1" Type="int" Nullable="false" />
+          <Property Name="Int2" Type="int" Nullable="false" />
+          <Property Name="Int3" Type="int" Nullable="false" />
+          <Property Name="Int4" Type="int" Nullable="false" />
+          <Property Name="Int5" Type="int" Nullable="false" />
+          <Property Name="Int6" Type="int" Nullable="false" />
+          <Property Name="Int7" Type="int" Nullable="false" />
+          <Property Name="Int8" Type="int" Nullable="false" />
+          <Property Name="Int9" Type="int" Nullable="false" />
+          <Property Name="String1" Type="varchar(max)" />
+          <Property Name="String2" Type="varchar(max)" />
+          <Property Name="String3" Type="varchar(max)" />
+          <Property Name="String4" Type="varchar(max)" />
+          <Property Name="String5" Type="varchar(max)" />
+          <Property Name="String6" Type="varchar(max)" />
+          <Property Name="String7" Type="varchar(max)" />
+          <Property Name="String8" Type="varchar(max)" />
+          <Property Name="String9" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Questions">
+          <Key>
+            <PropertyRef Name="QuizId" />
+          </Key>
+          <Property Name="QuizId" Type="int" Nullable="false" />
+          <Property Name="Quest" Type="nvarchar(max)" />
+          <Property Name="Answers" Type="nvarchar(max)" />
+          <Property Name="Ans" Type="nvarchar" MaxLength="50" />
+          <Property Name="Level" Type="int" />
+        </EntityType>
+        <EntityType Name="Score">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Marks" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="TestDataModelStoreContainer">
+          <EntitySet Name="Data" EntityType="Self.Data" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Questions" EntityType="Self.Questions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Score" EntityType="Self.Score" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TestDataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Datum">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Int1" Type="Int32" Nullable="false" />
+          <Property Name="Int2" Type="Int32" Nullable="false" />
+          <Property Name="Int3" Type="Int32" Nullable="false" />
+          <Property Name="Int4" Type="Int32" Nullable="false" />
+          <Property Name="Int5" Type="Int32" Nullable="false" />
+          <Property Name="Int6" Type="Int32" Nullable="false" />
+          <Property Name="Int7" Type="Int32" Nullable="false" />
+          <Property Name="Int8" Type="Int32" Nullable="false" />
+          <Property Name="Int9" Type="Int32" Nullable="false" />
+          <Property Name="String1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="String2" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="String3" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="String4" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="String5" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="String6" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="String7" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="String8" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="String9" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="TestDataEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Data" EntityType="Self.Datum" />
+          <EntitySet Name="Scores" EntityType="TestDataModel.Score" />
+          <EntitySet Name="Questions" EntityType="TestDataModel.Question" />
+        </EntityContainer>
+        <EntityType Name="Score">
+          <Key>
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Marks" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Question">
+          <Key>
+            <PropertyRef Name="QuizId" />
+          </Key>
+          <Property Name="QuizId" Type="Int32" Nullable="false" />
+          <Property Name="Quest" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Answers" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ans" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Level" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TestDataModelStoreContainer" CdmEntityContainer="TestDataEntities">
+          <EntitySetMapping Name="Data">
+            <EntityTypeMapping TypeName="TestDataModel.Datum">
+              <MappingFragment StoreEntitySet="Data">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Int1" ColumnName="Int1" />
+                <ScalarProperty Name="Int2" ColumnName="Int2" />
+                <ScalarProperty Name="Int3" ColumnName="Int3" />
+                <ScalarProperty Name="Int4" ColumnName="Int4" />
+                <ScalarProperty Name="Int5" ColumnName="Int5" />
+                <ScalarProperty Name="Int6" ColumnName="Int6" />
+                <ScalarProperty Name="Int7" ColumnName="Int7" />
+                <ScalarProperty Name="Int8" ColumnName="Int8" />
+                <ScalarProperty Name="Int9" ColumnName="Int9" />
+                <ScalarProperty Name="String1" ColumnName="String1" />
+                <ScalarProperty Name="String2" ColumnName="String2" />
+                <ScalarProperty Name="String3" ColumnName="String3" />
+                <ScalarProperty Name="String4" ColumnName="String4" />
+                <ScalarProperty Name="String5" ColumnName="String5" />
+                <ScalarProperty Name="String6" ColumnName="String6" />
+                <ScalarProperty Name="String7" ColumnName="String7" />
+                <ScalarProperty Name="String8" ColumnName="String8" />
+                <ScalarProperty Name="String9" ColumnName="String9" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Scores">
+            <EntityTypeMapping TypeName="TestDataModel.Score">
+              <MappingFragment StoreEntitySet="Score">
+                <ScalarProperty Name="Marks" ColumnName="Marks" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Questions">
+            <EntityTypeMapping TypeName="TestDataModel.Question">
+              <MappingFragment StoreEntitySet="Questions">
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="Ans" ColumnName="Ans" />
+                <ScalarProperty Name="Answers" ColumnName="Answers" />
+                <ScalarProperty Name="Quest" ColumnName="Quest" />
+                <ScalarProperty Name="QuizId" ColumnName="QuizId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
