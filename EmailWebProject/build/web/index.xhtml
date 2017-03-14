@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html" 
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>UHCL-WebMail Login</title>
+    </head>
+    <body>
+
+        <h3>Welcome to UHCL Web Mail System</h3>
+
+        <img src="inbox.jpe" alt="webmail" style="width:304px;height:228px;"></img>
+        <br>Sign in to your account</br>
+        <h:form>
+            <p>Login ID
+                <h:inputText id="id" required="true" requiredMessage="ID can not be empty"
+                             value="#{login.id}"> </h:inputText>
+                          
+                  <f:param name="loginId" value="#{login.id}"></f:param>
+                 
+            </p>
+            <p>Password
+                <h:inputText id="pwd" required="true" requiredMessage="Password can not be empty"
+                             value="#{login.pwd}">
+
+                </h:inputText>
+            </p>
+
+            <h:commandButton id="SignIn" value="Sign In" action="#{login.loginAccount()}"/> 
+        </h:form> 
+       
+        <br/>
+        <a href="faces/register.xhtml">Click here to register</a>
+
+    </body>
+</html>
+
+

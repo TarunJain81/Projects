@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <head>
+        <title>Reply Mail</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h2>Please Reply your mail</h2>
+        <h:form>
+
+            <p>To:
+                <h:outputLabel id ="To" value="#{login.rToEmail}"></h:outputLabel>
+
+
+                <p>Subject:
+                    <h:outputLabel id ="subject" value="#{login.rSubject}"></h:outputLabel>
+
+
+                </p>
+                <p>Old Content:
+                    <h:outputLabel id ="oldcontent" value="#{login.oldContent}"></h:outputLabel>
+
+
+                </p>
+            </p>
+            <p><h4>Your Reply:</h4>
+                <h:inputTextarea id="content" required="true" rows="6" cols="50" requiredMessage="To Email ID can not be empty"
+                                 value="#{login.rContent}">
+
+                </h:inputTextarea>
+            </p>
+            <h:commandButton id="sendMail" value="Send Mail" action="#{login.replyfinal()}"/>
+        </h:form>
+    </body>
+</html>

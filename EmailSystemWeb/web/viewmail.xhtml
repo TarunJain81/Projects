@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <head>
+        <title>Mail View</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <div><h3>Mail View</h3>
+
+            <h:form>
+
+                <p>Mail Number :<h:outputLabel id ="mailnumber" value="#{login.rdemailNo}"></h:outputLabel> </p>
+                <p>From:<h:outputLabel id ="from" value="#{login.rddfromEmail}"></h:outputLabel> </p>
+                <p>To: <h:outputLabel id ="To" value="#{login.id}"></h:outputLabel> </p>
+
+                <p>Subject:
+                    <h:outputLabel id ="subject" value="#{login.rdsubject}"></h:outputLabel></p>
+                <p>Date:
+                    <h:outputLabel id ="date" value="#{login.rddateTime}"></h:outputLabel> </p>
+
+
+                <h3><p>Content:
+                        <h:outputLabel id ="content" value="#{login.rdcontent}"></h:outputLabel> </p></h3>
+
+                <h3>Previous Mails:  <h:dataTable value="#{login.readmail}" var="x" >
+                        <h:column>
+                            <f:facet name="header"></f:facet>
+                                #{x}
+                        </h:column>
+                    </h:dataTable> </h3>
+                <h:commandButton id="Inbox" value="Inbox" action="faces/loginView.xhtml"/>
+
+
+            </h:form>
+
+        </div>
+    </body>
+</html>

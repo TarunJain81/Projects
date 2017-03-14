@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Register</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h2>Welcome to UHCL Web Mail </h2> 
+        <h3>Please Fill  the following details to make Registration</h3>
+                <img src="regpen.jpg" alt="webmail" style="width:304px;height:228px;"></img>
+
+        <h:form>
+            <p>Email ID
+                <h:inputText id="emailId" required="true" requiredMessage="Email ID can not be empty"
+                             value="#{register.id}" >
+                </h:inputText>
+            </p>
+
+            <p>Password
+                <h:inputText id="pwd" required="true" requiredMessage="Password ID can not be empty"
+                             value="#{register.pwd}">
+                </h:inputText>
+            </p>
+            
+            <p>Name 
+                <h:inputText id="name" required="true" requiredMessage="name can not be empty"
+                             value="#{register.name}">
+                </h:inputText>
+            </p>
+
+            <h:commandButton id="submit" value="Register" action="#{register.createAccount()}"></h:commandButton>
+        </h:form>
+
+
+    </h:body>
+</html>

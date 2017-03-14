@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <head>
+        <title>ComposeMail</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+        <h2>Please compose your mail</h2>
+        
+        
+        <h:form>
+        <p>To Email ID:
+            <h:inputText id="toEmailId" required="true" requiredMessage="To Email ID can not be empty"
+                         value="#{login.toEmailId}">
+                
+            </h:inputText>
+        </p>
+        <p>Subject    :
+            <h:inputText id="subject" required="true" requiredMessage="To Email ID can not be empty"
+                         value="#{login.subject}">
+                
+            </h:inputText>
+        </p>
+        <p>Email Content:
+            <h:inputTextarea id="content" required="true" requiredMessage="To Email ID can not be empty"
+                             value="#{login.content}">
+                
+            </h:inputTextarea>
+        </p>
+            <h:commandButton id="sendMail" value="Send Mail" action="#{login.composeMail()}"/>
+        </h:form>
+    </body>
+</html>
